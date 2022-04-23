@@ -4,9 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
 
 @Module({
-  imports: [
-    TasksModule,
-    TypeOrmModule.forRoot(typeOrmConfig)
-    ]
+  imports: [TasksModule, TypeOrmModule.forRoot(typeOrmConfig)],
 })
 export class AppModule {}

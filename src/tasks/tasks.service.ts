@@ -8,7 +8,6 @@ import { TaskRepository } from './task.repository';
 
 @Injectable()
 export class TasksService {
-
   constructor(
     @InjectRepository(TaskRepository)
     private _taskRepository: TaskRepository,

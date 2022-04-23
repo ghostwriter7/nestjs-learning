@@ -9,7 +9,7 @@ import {
   Post,
   Query,
   UsePipes,
-  ValidationPipe
+  ValidationPipe,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { TaskStatus } from './task-status.enum';
@@ -22,7 +22,9 @@ export class TasksController {
   constructor(private _tasksService: TasksService) {}
 
   @Get()
-  public getTasks(@Query(ValidationPipe) filterDto: GetTaskFilterDto): Promise<Task[]> {
+  public getTasks(
+    @Query(ValidationPipe) filterDto: GetTaskFilterDto,
+  ): Promise<Task[]> {
     return this._tasksService.getTasks(filterDto);
   }
 

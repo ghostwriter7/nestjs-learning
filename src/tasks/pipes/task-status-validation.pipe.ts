@@ -5,7 +5,7 @@ export class TaskStatusValidationPipe implements PipeTransform {
   private readonly allowedStatuses = [
     TaskStatus.OPEN,
     TaskStatus.DONE,
-    TaskStatus.IN_PROGRESS
+    TaskStatus.IN_PROGRESS,
   ];
 
   transform(value: any): any {
