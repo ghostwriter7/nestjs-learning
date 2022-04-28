@@ -57,7 +57,8 @@ export class TasksController {
   public updateTaskStatus(
     @Body('status', TaskStatusValidationPipe) status: TaskStatus,
     @Param('id', ParseIntPipe) id: number,
+    @GetUser() user: User
   ): Promise<Task> {
-    return this._tasksService.updateTaskStatus(id, status);
+    return this._tasksService.updateTaskStatus(id, status, user);
   }
 }
